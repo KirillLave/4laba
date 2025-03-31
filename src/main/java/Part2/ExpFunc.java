@@ -31,8 +31,10 @@ public class ExpFunc implements FuncOnInterval {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         ExpFunc expFunc = (ExpFunc) o;
         return Double.compare(A, expFunc.A) == 0 && Double.compare(B, expFunc.B) == 0 && Double.compare(UpLimit, expFunc.UpLimit) == 0 && Double.compare(LowLimit, expFunc.LowLimit) == 0;
     }

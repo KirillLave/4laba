@@ -17,11 +17,11 @@ public class Integral <T extends FuncOnInterval> implements Functional<T> {
     @Override
     public double result(T func){
         if(lowLimit > func.getUpLimit() || upLimit < func.getLowLimit()){
-            throw new IllegalArgumentException("Illegal Range");
+            throw new IllegalArgumentException("Лежит вне границ определения");
         }
         double integral = 0;
-        for(double i = lowLimit; i <= upLimit; i += ((upLimit - lowLimit)/1000)){
-            integral += func.solution(i) * ((upLimit - lowLimit)/1000);
+        for(double i = lowLimit; i <= upLimit; i += ((upLimit - lowLimit)/100000)){
+            integral += func.solution(i) * ((upLimit - lowLimit)/100000);
         }
         return integral;
     }
